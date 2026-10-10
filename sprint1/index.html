@@ -44,16 +44,17 @@
       <h2>1. Pinning Packet</h2>
       <h3><b>Pas 1: Comprovació de l’estat APT</b></h3>
       <p>Primer executem la comanda <b>apt-cache policy curl</b> per veure les versions que estan disponibles.</p>
-      <ul>
-        <li>Arrencar des del USB o la imatge ISO.</li>
-        <li>Triar l'idioma i la distribució de teclat.</li>
-        <li>Configurar el particionat del disc.</li>
-        <li>Esperar que finalitzi la còpia d'arxius i reiniciar.</li>
-      </ul>
-      <img src="../img/exemple.svg" alt="Exemple de captura de pantalla de l'assistent d'instal·lació">
-      <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-         Un cop reiniciat el sistema, comprova que arrenca correctament i que
-         reconeix tot el maquinari abans de continuar amb el següent apartat.</p>
+      <img src="Pp1.png" alt="Comprovació de l'estat APT">
+      <h3><b>Pas 2: Crear la regla de Pinning per modificar la prioritat</b></h3>
+      <p>En aquest cas instal·larem curl que serveix per descarregar o pujar arxius a internet a través de URL.<br> 
+        Primer crearem un arxiu on definirem les regles perquè s’ens descarregui la versió més nova, amb la <br>
+        comanda <b>nano /etc/apt/preferences.d/curl-pin.</b></p>
+      <img src="Pp2.png" alt="Regles definides nano">
+      <p>Al fer <b>apt-cache policy curl</b> podrem veure que la versió que hem especificat tindrà més prioritat que les demés.</p>
+      <img src="Pp3.png" alt="Resultat de la regla aplicada">
+      <h3><b>Pas 3: Instal·lació</b></h3>
+      <p>Al fer <b>apt install curl</b> començará l’instal·lació de la versió indicada.<p>
+      <img src="Pp4.png" alt="Instal·lació final">
       <p class="tornar-index"><a href="#index-apartats">↑ Tornar a l'índex</a></p>
     </article>
     <article class="apartat" id="apartat2">
