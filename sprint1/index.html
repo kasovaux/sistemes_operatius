@@ -89,84 +89,84 @@
           <p>Aquests són tots els fitxers amb els que partim d’es d’un inici.</p>
           <img src="img/G1.png" alt="inicial">
           <p>Per saber quina és la carpeta personal, hem d’executar la comanda:</p>
-          <img src="/img/G2.png" alt="inicial2">
+          <img src="img/G2.png" alt="inicial2">
           
           <h3><b>Pas 0. Preparar-ho tot</b></h3>
           <p>Photorec és el programa que farem servir per recuperar fitxers. Ve dins del paquet testdisk Per ainstalar-lo executarem:</p>
-          <img src="/img/G3.png" alt="cap1">
+          <img src="img/G3.png" alt="cap1">
 
           <p>Crearem una carpeta dins de la nostra carpeta personal per a aquesta practica,
             l'anomenarem <b>practica</b>. Ens situarem dins i amb pwd podem veure on ens trobem.
-          <img src="/img/G4.png" alt="cap2">
+          <img src="img/G4.png" alt="cap2">
 
           <p>Ens descarregarem una foto d’internet la qual anomenarem <b>foto</b>.
             Crearem un text des de la terminal amb echo el qual guardarem dins del fitxer <b>notes.txt</b>.
-          <img src="/img/G5.png" alt="cap4">
+          <img src="img/G5.png" alt="cap4">
 
           <p>Comprovem que estiguin</p>
-          <img src="/img/G6.png" alt="cap5">
+          <img src="img/G6.png" alt="cap5">
 
           <p>Crearem un fitxer de 200 MB ple de zeros, el qual farà de disc durant tota la
           pràctica. És com un disc nou acabat de comprar, buit i sense formatar.
           Comprovarem que existeixi, mostrant el resultat amb MB utilitzant <b>-h</b>.</p>
-          <img src="/img/G7.png" alt="cap6">
+          <img src="img/G7.png" alt="cap6">
 
           <p>Li donarem el format <b>ext.4</b> al disc amb <b>mkfs</b> <i>make file system</i>.</p>
-          <img src="/img/G8.png" alt="cap7">
+          <img src="img/G8.png" alt="cap7">
 
           <h3><b>2.2 Munta el disc</b></h3>
           <p>Connectarem el disc a una carpeta per poder-hi entrar. En aquest cas será a la
           carpeta <b>prova</b> indicant-li amb <b>-o loop</b> que el disc és un fitxer, no un disc físic.</p>
-          <img src="/img/G9.png" alt="cap8">
+          <img src="img/G9.png" alt="cap8">
 
           <p>Copiem tots els fitxers dins de <b>prova</b>.</p>
-          <img src="/img/G10.png" alt="cap9">
+          <img src="img/G10.png" alt="cap9">
 
           <h3><b>2.4 Desa l'empremta digital dels originals</b></h3>
           <p>Utilitzarem <b>sha256sum</b> per generar els hashos dels fitxers</p>
-          <img src="/img/G11.png" alt="cap10">
+          <img src="img/G11.png" alt="cap10">
 
           <h3><b>2.5 Desmunta el disc</b></h3>
           <p>Passarem a desmontar el disc.</p>
-          <img src="/img/G12.png" alt="cap11">
+          <img src="img/G12.png" alt="cap11">
 
           <h3><b>Part 3. Formateig d'alt nivell</b></h3>
           <p>Ara el desmontarem <b>-E nodiscard</b> li diu a mkfs que només reescrigui l'índex del disc, 
           sense buidar-ne el contingut.</p>
-          <img src="/img/G13.png" alt="cap12">
+          <img src="img/G13.png" alt="cap12">
 
           <p>Montarem el disc i mirarem que hi ha dins on veurem que els fitxers
           han desaparegut i que el disc pareix buit.</p>
-          <img src="/img/G14.png" alt="cap13">
+          <img src="img/G14.png" alt="cap13">
 
           <h3><b>Part 4. Recuperar els fitxers</b></h3>
           <p>Executarem <b>photorec</b> i mirarem que ha trobat. Com podrem veure són els nostres 3
           fitxers anteriors, l’únic que els noms són diferents dels originals, perquè els noms es 
           guardaven a l'índex que hem esborrat.</p>
-          <img src="/img/G15.png" alt="cap14">
+          <img src="img/G15.png" alt="cap14">
 
           <p>Podem veure que s’ens crea una carpeta de la recuperació dins de <b>practica</b>.</p>
-          <img src="/img/G16.png" alt="cap15">
+          <img src="img/G16.png" alt="cap15">
 
           <p>Xifrarem <b>recup.1/*</b> amb el mateix métode de abans <b>sha256sum</b> i després fem un
           <b>cat</b> sobre els originals i podrem veure que tenen exactament el mateix hash.</p>
-          <img src="/img/G17.png" alt="cap16">
+          <img src="img/G17.png" alt="cap16">
 
           <p>Com que un fitxer de text no té capçalera, no l’ha pogut reconéixer, però podem
           buscar-lo per alguna paraula que aquest contenia amb la comanda <b>grep</b>.</p>
-          <img src="/img/G18.png" alt="cap17">
+          <img src="img/G18.png" alt="cap17">
 
           <h3><b>Part 5.Esborrat de baix nivell</b></h3>
           <p>Farem un formateig de baix nivell. Omplirem el disc de zeros, amb <b>conv=notrunc</b> fa
           que <b>dd</b> escrigui a sobre del fitxer que ja existeix.</p>
-          <img src="/img/G19.png" alt="cap18">
+          <img src="img/G19.png" alt="cap18">
 
           <p>Al tornar a recuperar-ho, podrem veure un <b>report.xml</b> com es el cas, o un missatge
           que diu que la carpeta no existeix. En tots dos casos vol dir que photorec no ha trobat cap fitxer.</p>
-          <img src="/img/G20.png" alt="cap19">
+          <img src="img/G20.png" alt="cap19">
 
           <p>Aquesta vegada no ha de sortir res ja que hem formateigat el disc omplint-lo de zeros.</p>
-          <img src="/img/G21.png" alt="cap20">
+          <img src="img/G21.png" alt="cap20">
           
       <p class="tornar-index"><a href="#index-apartats">↑ Tornar a l'índex</a></p>
     </article>
