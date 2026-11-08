@@ -125,39 +125,40 @@
           
           <h2><b>Tipus de formateig</b></h2>
           <p>Amb <b>fdisk -l</b> mirem quin es el disc de la maquina, que és <b>sda</b> i el que hem afegit és <b>sdb</b>.</p>
-          <img src="../img/G21.png" alt="cap20">
+          <img src="../img/F1.png" alt="cap20">
+          <img src="../img/F2.png" alt="cap20">
 
           <P>Entrarem a l’eina <b>fdisk</b> seleccionant el disc que hem afegit, el <b>sdb</b>. Dins d’aquesta 
           indicarem amb la <b>n</b> que volem fer una nova partició del tamany de 20GB. Ho guardem i sortim amb <b>w</b>.</P>
-          <img src="../img/G21.png" alt="cap20">
+          <img src="../img/F3.png" alt="cap20">
 
           <P>Aquesta partició la formatarem a un format <b>ext4</b>.</P>
-          <img src="../img/G21.png" alt="cap20">
+          <img src="../img/F4.png" alt="cap20">
 
           <P>Ens dirigirem dins de la carpeta de muntatge temporal on crearem una carpeta <b>particio1</b>.</P>
-          <img src="../img/G21.png" alt="cap20">
+          <img src="../img/F5.png" alt="cap20">
 
           <P>Montarem la partició <b>/dev/sdb1</b> al directori <b>/mnt/particio1/</b>. Així ara qualsevol cosa
           que guardesim dins d'aquesta carpeta s'escriurà físicament al nou disc de 20 GB.
           Entrem dins de la carpeta on dins creem la carpeta <b>prova</b> i un fitxer buit anomenat <b>prova2</b>.</P>
-          <img src="../img/G21.png" alt="cap20">
+          <img src="../img/F6.png" alt="cap20">
 
           <P>Sortirem del directori i desmuntarem la partició <b>/dev/sdb1</b> del directori <b>/mnt/particio1/</b> .</P>
-          <img src="../img/G21.png" alt="cap20">
+          <img src="../img/GF7.png" alt="cap20">
 
           <P>Ara podrem veure que al llistar els sistemes de fitxers, el <b>sdb1</b> al primer no apareix 
           ja que l’haviem desmuntat, pero després fent un <b>mount</b> podrem veure a la última línia que hi apareix.</P>
-          <img src="../img/G21.png" alt="cap20">
+          <img src="../img/F8.png" alt="cap20">
 
           <P>Perquè la partició es munti de manera automàtica i permanent cada vegada que engeguesim l'ordinador seguirem els següents pasos.
           Primer mirarem el seu identificador, <b>UUID</b> i el copiarem.</P>
-          <img src="../img/G21.png" alt="cap20">
+          <img src="../img/F9.png" alt="cap20">
 
           <P>Aquest l’enganxarem dins del fitxer <b>fstab</b> indicant-li on s’ha de montar.</P>
-          <img src="../img/G21.png" alt="cap20">
+          <img src="../img/F10.png" alt="cap20">
 
           <P>Per últim, reiniciem l’ordinador i verifiquem que aquesta segueixi muntada.</P>
-          <img src="../img/G21.png" alt="cap20">
+          <img src="../img/F11.png" alt="cap20">
 
           
       <p class="tornar-index"><a href="#index-apartats">↑ Tornar a l'índex</a></p>
