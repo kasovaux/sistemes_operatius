@@ -33,7 +33,6 @@
         <tr><td>2</td><td><a href="#apartat2">Pràctica gestió de processos</a></td></tr>
         <tr><td>2</td><td><a href="#apartat3">Tipus de formateig</a></td></tr>
         <tr><td>2</td><td><a href="#apartat4">Gestió d'usuaris, grups i permisos</a></td></tr>
-        <tr><td>2</td><td><a href="#apartat5">Tipus de formateig</a></td></tr>
       </tbody>
     </table>
 
@@ -265,40 +264,79 @@
         <article class="apartat" id="apartat3">
           <h2><b>Tipus de formateig</b></h2>
           <p>Amb <b>fdisk -l</b> mirem quin es el disc de la maquina, que és <b>sda</b> i el que hem afegit és <b>sdb</b>.</p>
-          <img src="../img/F1.png" alt="cap20">
-          <img src="../img/F2.png" alt="cap20">
+          <img src="../img/F1.png" alt="c1">
+          <img src="../img/F2.png" alt="c2">
 
           <P>Entrarem a l’eina <b>fdisk</b> seleccionant el disc que hem afegit, el <b>sdb</b>. Dins d’aquesta 
           indicarem amb la <b>n</b> que volem fer una nova partició del tamany de 20GB. Ho guardem i sortim amb <b>w</b>.</P>
-          <img src="../img/F3.png" alt="cap20">
+          <img src="../img/F3.png" alt="c3">
 
           <P>Aquesta partició la formatarem a un format <b>ext4</b>.</P>
-          <img src="../img/F4.png" alt="cap20">
+          <img src="../img/F4.png" alt="c4">
 
           <P>Ens dirigirem dins de la carpeta de muntatge temporal on crearem una carpeta <b>particio1</b>.</P>
-          <img src="../img/F5.png" alt="cap20">
+          <img src="../img/F5.png" alt="c5">
 
           <P>Montarem la partició <b>/dev/sdb1</b> al directori <b>/mnt/particio1/</b>. Així ara qualsevol cosa
           que guardesim dins d'aquesta carpeta s'escriurà físicament al nou disc de 20 GB.
           Entrem dins de la carpeta on dins creem la carpeta <b>prova</b> i un fitxer buit anomenat <b>prova2</b>.</P>
-          <img src="../img/F6.png" alt="cap20">
+          <img src="../img/F6.png" alt="c6">
 
           <P>Sortirem del directori i desmuntarem la partició <b>/dev/sdb1</b> del directori <b>/mnt/particio1/</b> .</P>
-          <img src="../img/GF7.png" alt="cap20">
+          <img src="../img/GF7.png" alt="c7">
 
           <P>Ara podrem veure que al llistar els sistemes de fitxers, el <b>sdb1</b> al primer no apareix 
           ja que l’haviem desmuntat, pero després fent un <b>mount</b> podrem veure a la última línia que hi apareix.</P>
-          <img src="../img/F8.png" alt="cap20">
+          <img src="../img/F8.png" alt="c8">
 
           <P>Perquè la partició es munti de manera automàtica i permanent cada vegada que engeguesim l'ordinador seguirem els següents pasos.
           Primer mirarem el seu identificador, <b>UUID</b> i el copiarem.</P>
-          <img src="../img/F9.png" alt="cap20">
+          <img src="../img/F9.png" alt="c9">
 
           <P>Aquest l’enganxarem dins del fitxer <b>fstab</b> indicant-li on s’ha de montar.</P>
-          <img src="../img/F10.png" alt="cap20">
+          <img src="../img/F10.png" alt="c10">
 
           <P>Per últim, reiniciem l’ordinador i verifiquem que aquesta segueixi muntada.</P>
-          <img src="../img/F11.png" alt="cap20">
+          <img src="../img/F11.png" alt="c11">
+
+<!-- -------------------------------------- GESTIO RWX ------------------------ -->
+        <article class="apartat" id="apartat3">
+          <h2>Gestió d'usuaris, grups i permisos</h2>
+          <p>El <b>fitxer</b> passwd mostra la llista d'usuaris del sistema i la seva configuració bàsica.</p>
+          <img src="../img/GU1.png" alt="G1">
+          <img src="../img/GU2.png" alt="G2">
+          <img src="../img/GU3.png" alt="G3">
+
+          <p>Mostra les contrasenyes encriptades i la informació d'expiració dels usuaris. Per raons de seguretat, només l'usuari root pot llegir aquest fitxer.</p>
+          <img src="../img/GU4.png" alt="G4">
+
+          <p>Mostra el nom, hash de la contrassenya, data del darrer canvi de contrassenya, dies minims per poder canviar la contrassenya, dies máxims de validesa de la contrassenya i els d’avís abans que caduqui  la contrassenya.</p>
+          <img src="../img/GU5.png" alt="g5">
+
+          <p>Serveix per veure les informacions dels grups que hi haguin. Mostra el nom del grup, la contrassenya, l’administrador del grup i els membres del grup i els permisos que tenen.</p>
+          <img src="../img/GU6.png" alt="G6">
+
+          <p><b>adduser</b>crea la interficie per a l’usuari i tot, crea home i aquestes carpetes, així l’usuari no tindra cap problema al iniciar la sessió. </p>
+          <img src="../img/GU7.png" alt="G7">
+
+          <p>Al llistar el contingut de <b>/home</b>, mostrant els permisos, propietaris i carpetes podem 
+          veure que <b>sofia</b> pertany a l'usuari sofia i al seu grup. Té permisos de <b>r</b> lectura, <b>w</b> escriptura i <b>x</b> execució.</p>
+          <img src="../img/GU8.png" alt="G8">
+
+          <p>La  comanda <b>-s de shell</b> serveix per modificar el shell per defecte d'un usuari existent. Aquí s'està establint que utilitzi Bash</p>
+          <img src="../img/GU9.png" alt="G9">
+
+          <p>Podem afegir a un usuari dins d’un grup creant el grup nosaltres. En aquest cas s’ha creat un grup <b>alumnes</b>, i després s’ha modificat el nom amb <b>-n</b> per <b>asix</b>.</p>
+          <img src="../img/GU10.png" alt="G10">
+
+          <p>Utilitzant <b>adduser + nom d’usuari + nom grup</b> podem afegir a l’usuari <b>alumne2</b> al grup asix. Per borrar-lo simplement fem un <b>deluser</b>.</p>
+          <img src="../img/GU11.png" alt="G11">
+
+          <p>Per a bloquejar a un usuari d’un grup utilitzem: </p>
+          <img src="../img/GU12.png" alt="G12">
+
+          <p>Podrem veure que <b>alumne2</b> té un <b>!</b> indicant que está bloquejat.</p>
+          <img src="../img/GU13.png" alt="G13">
 
           
       <p class="tornar-index"><a href="#index-apartats">↑ Tornar a l'índex</a></p>
