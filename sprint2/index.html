@@ -309,36 +309,96 @@
           <p>Crea la carpeta de l'estudi i entra-hi.</p>
           <img src="../img/imag1.png" alt="G1">
          
-          <p>Crea tres subcarpetes, una per equip, i una de compartida. Mira com ha quedat tot.</p>
+          <p>Crea tres subcarpetes, una per equip, i una de compartida. Posa-hi un fitxer d'exemple a cada carpeta d'equip.
+            Mira com ha quedat tot.</p>
           <img src="../img/imag2.png" alt="G2">
 
-          <p></p>
+          <p>Mira els permisos del fitxer joc.py</p>
           <img src="../img/imag3.png" alt="g3">
 
-          <p></p>
-          <img src="../img/GU6.png" alt="G4">
+          <p>Mira la mateixa informació amb stat, que dona els permisos en lletres i en número alhora</p>
+          <img src="../img/Gimag4.png" alt="G4">
 
-          <p><b>adduser</b>crea la interficie per a l’usuari i tot, crea home i aquestes carpetes, així l’usuari no tindra cap problema al iniciar la sessió. </p>
-          <img src="../img/GU7.png" alt="G5">
+          <p>Posa els permisos 750 a la carpeta codi i tot el que conté. Comprova-ho</p>
+          <img src="../img/imag5.png" alt="G5">
 
-          <p>Al llistar el contingut de <b>/home</b>, mostrant els permisos, propietaris i carpetes podem 
-          veure que <b>sofia</b> pertany a l'usuari sofia i al seu grup. Té permisos de <b>r</b> lectura, <b>w</b> escriptura i <b>x</b> execució.</p>
-          <img src="../img/GU8.png" alt="G6">
+          <p>A la carpeta <b>art</b>, treu el permís d'escriptura al propietari amb u-w.</p>
+          <img src="../img/imag6.png" alt="G6">
 
-          <p>La  comanda <b>-s de shell</b> serveix per modificar el shell per defecte d'un usuari existent. Aquí s'està establint que utilitzi Bash</p>
-          <img src="../img/GU9.png" alt="G7">
+          <p>Torna a afegir-l'hi.</p>
+          <img src="../img/imag7.png" alt="G7">
 
-          <p>Podem afegir a un usuari dins d’un grup creant el grup nosaltres. En aquest cas s’ha creat un grup <b>alumnes</b>, i després s’ha modificat el nom amb <b>-n</b> per <b>asix</b>.</p>
-          <img src="../img/GU10.png" alt="G8">
+          <p>Dona la carpeta codi a en pau i al grup programadors, amb -R perquè s'apliqui també al que hi ha dins.
+          Però abans hem de crear l'usuari pau i afegir el <b>groupadd</b></p>
+          <img src="../img/imag8.png" alt="G8">
+          <img src="../img/imag9.png" alt="G8">
 
-          <p>Utilitzant <b>adduser + nom d’usuari + nom grup</b> podem afegir a l’usuari <b>alumne2</b> al grup asix. Per borrar-lo simplement fem un <b>deluser</b>.</p>
-          <img src="../img/GU11.png" alt="G9">
+          <p>Canvia només el grup de la carpeta proves amb <b>chgrp</b></p>
+          <img src="../img/imag10.png" alt="G9">
 
-          <p>Per a bloquejar a un usuari d’un grup utilitzem: </p>
-          <img src="../img/GU12.png" alt="G10">
+          <p>Comprova que ara en Pau pot treballar al seu codi. Entra com a pau, crea un fitxer i surt</p>
+          <img src="../img/imag11.png" alt="G10">
 
-          <p>Podrem veure que <b>alumne2</b> té un <b>!</b> indicant que está bloquejat.</p>
-          <img src="../img/GU13.png" alt="G11">
+          <p>Encara com a pau, prova d'escriure a la carpeta de proves, que no és seva.</p>
+          <img src="../img/imag12.png" alt="G11">
+
+          <p>Ara la carpeta codi és 750, i el grup només hi pot llegir. Perquè l'equip hi pugui crear fitxers, dona permís d'escriptura al grup.</p>
+          <img src="../img/imag13.png" alt="G11">
+
+          <p>Mira el problema. Entra com a nvidal. La Núria és del grup programadors, així que ja pot escriure al codi.</p>
+          <p>Com a nvidal, crea un fitxer al codi i mira'n el grup.</p>
+          <img src="../img/imag16.png" alt="G11">
+
+          <p>Posa el bit SGID a la carpeta codi amb g+s</p>
+          <img src="../img/imag17.png" alt="G11">
+
+          <p>Torna a entrar com a nvidal i crea un altre fitxer. rea el fitxer i compara'l amb l'anterior</p>
+          <img src="../img/imag18.png" alt="G11">
+
+          <p>Prepara la carpeta perquè tothom hi pugui escriure, amb permisos 777. Entra com a Pau i deixa un fotxer. Al acabar, surt.</p>
+          <img src="../img/imag19.png" alt="G11">
+
+          <p>Ara entra com a marc i prova d'esborrar el fitxer d'en Pau. Com que el fitxer no és seu, rm pregunta si vols esborrar un fitxer protegit
+          . Deixa esborrar-lo! Sense sticky bit, qualsevol amb w a la carpeta pot esborrar fitxers d'altres. Surt amb exit.</p>
+          <img src="../img/imag21.png" alt="G11">
+
+          <p>Posa el sticky bit a la carpeta i mira com queden els permisos</p>
+          <img src="../img/imag22.png" alt="G11">
+
+          <p>Repeteix la prova. Com a pau, torna a crear el fitxer. Després, com a marc, prova d'esborrar-lo.</p>
+          <img src="../img/imag23.png" alt="G11">
+
+          <p>Comprova que ara en Marc no hi pot entrar. Com a marc, prova de llistar la carpeta codi.</p>
+          <img src="../img/imag24.png" alt="G11">
+
+          <p>Dona-li accés només a ell amb una ACL.</p>
+          <img src="../img/imag25.png" alt="G11">
+
+          <p>Mira els permisos ara. Apareix un + i l'entrada ACL.</p>
+          <img src="../img/imag26.png" alt="G11">
+
+          <p>Comprova que ara en Marc sí que hi pot entrar. Com a <b>marc</b>, llista la carpeta i surt.</p>
+          <img src="../img/imag27.png" alt="G11">
+
+          <p>Acabada la revisió, treu-li l'accés i comprova que l'entrada ha desaparegut.</p>
+          <img src="../img/imag28.png" alt="G11">
+
+          <p>Mira la màscara actual.</p>
+          <img src="../img/imag29.png" alt="G11">
+
+          <p>Crea un fitxer i una carpeta de prova a la teva carpeta personal i mira'n els permisos</p>
+          <img src="../img/imag30.png" alt="G11">
+
+          <p>Canvia la màscara a 027, que és la recomanada en servidors perquè la resta d'usuaris no vegi res de nou.</p>
+          <p>Torna a crear un fitxer i una carpeta, i compara</p>
+          <img src="../img/imag31.png" alt="G11">
+
+          <p>Mira els permisos de l'ordre passwd, la que fem servir per canviar la contrasenya.</p>
+          <img src="../img/imag32.png" alt="G11">
+
+          <p>Busca tots els programes del sistema que tenen el bit SUID.</p>
+          <img src="../img/imag33.png" alt="G11">
+
         </article>
 
           
